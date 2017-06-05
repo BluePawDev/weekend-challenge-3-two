@@ -3,16 +3,37 @@
 
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src='vendors/jquery-3.2.1.min.js'></script>
+    <script type="text/javascript" src='./vendors/jquery-3.2.1.min.js'></script>
     <script type="text/javascript" src='scripts/client.js'></script>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
-    <title>TITLE</title>
+    <title>Weekend Challenge: 3</title>
   </head>
 
   <body>
-    <h1>[HEADING1]</h1>
-    <h2>[HEADING2]</h2>
+    <h1>Weekend Challenge: 3</h1>
+    <h2>To Do List</h2>
+
+    <!-- START newTask div -->
+    <div id="newTaskDiv">
+      <h3>Add New Task</h3>
+      <!-- START newTask form -->
+      <form id="newTaskForm" class="newTask" action="index.html" method="post">
+        <label for="">New Task: </label>
+        <input type="text" name="txtNewTask" value="">
+        <button id="btnAddTask" type="submit" name="button">Add Task</button>
+
+      </form>
+      <!-- END newTask form -->
+    </div>
+    <!-- END newTask div -->
+
+    <!-- START taskList div -->
+    <div id="taskList" class="taskList">
+      <h3>Tasks to Complete</h3>
+
+    </div>
+    <!-- END taskList div -->
 
   </body>
 

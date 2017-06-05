@@ -1,14 +1,15 @@
-/*** REQUIRES ***/
+/*** GLOBAL REQUIRES ***/
 var express = require('express');
+var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var pg = require('pg');
+var routes = require('./routes/routes');
+
 
 // Globals
-var app = express();
-var urlencodedParser = bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({
 	extended: true
-});
+}));
 
 // Listen
 app.listen(7500, function() {
@@ -17,11 +18,9 @@ app.listen(7500, function() {
 
 /*** USES ***/
 app.use(express.static('public'));
+app.use('/todo', routes);
 
 
-/*** ROUTES ***/
-// Base URL
 app.get('/', function(req, res) {
-	console.log('Base URL hit');
-	res.sendFile(path.resolve('views/index.html'));
+	res.sendFile(path.resolve('./views/index.html'));
 });
